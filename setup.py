@@ -16,7 +16,14 @@ except ImportError:
     version = get_version()
 
 
+# Hack: The Django version pin needs to match the Django version in the project
+# that is using this library, or else you get build error when installing as an
+# external Github depencency via pipenv:
+# pipenv install -e git+https://github.com/GetResQ/django-subdomains.git@3.0#egg=django-subdomains
+# Seems to be a bug in pipenv, but I haven't looked too deeply into it. Just
+# getting the build working for now.
 install_requires = ['django==2.2.12']
+
 tests_require = install_requires + ['mock']
 
 setup(name='django-subdomains',
