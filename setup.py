@@ -22,7 +22,7 @@ except ImportError:
 # pipenv install -e git+https://github.com/GetResQ/django-subdomains.git@3.0#egg=django-subdomains
 # Seems to be a bug in pipenv, but I haven't looked too deeply into it. Just
 # getting the build working for now.
-install_requires = ['django==3.0.5']
+install_requires = ['django<=3.1']
 
 tests_require = install_requires + ['mock']
 
